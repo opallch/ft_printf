@@ -6,7 +6,7 @@
 #    By: oleung <oleung@student.42berlin.de>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/15 22:55:22 by oleung            #+#    #+#              #
-#    Updated: 2023/11/29 09:04:11 by oleung           ###   ########.fr        #
+#    Updated: 2023/12/07 23:08:24 by oleung           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,10 @@ CFLAGS = -Wall -Wextra -Werror
 AR = ar -r
 RM = rm -f
 
-SRCS = ft_printf.c 
+SRCS = 	ft_printf.c \
+		ft_putnbr_base_fd.c \
+		ft_putptr_fd.c
+		
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
