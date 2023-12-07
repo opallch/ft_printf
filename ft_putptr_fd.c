@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putptr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oleung <oleung@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/29 09:07:52 by oleung            #+#    #+#             */
-/*   Updated: 2023/12/07 15:07:24 by oleung           ###   ########.fr       */
+/*   Created: 2023/12/07 15:05:07 by oleung            #+#    #+#             */
+/*   Updated: 2023/12/07 15:12:16 by oleung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-#include <stdarg.h>
-#include "./libft/libft.h"
-
-int ft_printf(const char *format, ...);
-void	ft_putnbr_base_fd(int n, char *base, int fd);
-void    ft_putptr_fd(void *ptr, int fd);
-
-# endif
+void    ft_putptr_fd(void *ptr, int fd)
+{ 
+    // NULL -> (nil)
+    // else: 0x402004
+    if (fd != -1)
+    {
+        if (!ptr)
+            write(fd, "(nil)", 5 * sizeof(char));
+        // TODO figure out how to print the address
+        // else
+        //     write(fd, );
+    }
+}

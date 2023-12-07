@@ -6,7 +6,7 @@
 /*   By: oleung <oleung@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 08:42:05 by oleung            #+#    #+#             */
-/*   Updated: 2023/12/07 14:38:26 by oleung           ###   ########.fr       */
+/*   Updated: 2023/12/07 15:13:05 by oleung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,8 @@ int ft_printf(const char *format, ...)
                 ft_putnbr_base_fd(va_arg(args, int), "0123456789abcdef", 0);
             else if (format[i] == 'X')
                 ft_putnbr_base_fd(va_arg(args, int), "0123456789ABCDEF", 0);
-            // else if (format[i] == 'p')
+            else if (format[i] == 'p')
+                ft_putptr_fd(va_arg(args, void *), 0);
         }
         else
             ft_putchar_fd(format[i], 0);
