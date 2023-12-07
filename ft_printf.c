@@ -6,7 +6,7 @@
 /*   By: oleung <oleung@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 08:42:05 by oleung            #+#    #+#             */
-/*   Updated: 2023/12/07 14:20:04 by oleung           ###   ########.fr       */
+/*   Updated: 2023/12/07 14:38:26 by oleung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,6 @@ int ft_printf(const char *format, ...)
     {
         if (format[i] == '%') // TODO why seg fault when format[i++]
         {
-            /* 
-            x or X
-            p
-            */
            i++; 
            if (format[i] == 'c')
             ft_putchar_fd((char) va_arg(args, int), 0);
@@ -38,6 +34,11 @@ int ft_printf(const char *format, ...)
                 ft_putnbr_fd(va_arg(args, int), 0);
             else if (format[i] == 'u')
                 ft_putnbr_fd(va_arg(args, unsigned int), 0);
+            else if (format[i] == 'x')
+                ft_putnbr_base_fd(va_arg(args, int), "0123456789abcdef", 0);
+            else if (format[i] == 'X')
+                ft_putnbr_base_fd(va_arg(args, int), "0123456789ABCDEF", 0);
+            // else if (format[i] == 'p')
         }
         else
             ft_putchar_fd(format[i], 0);
