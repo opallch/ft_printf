@@ -6,7 +6,7 @@
 /*   By: oleung <oleung@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 08:42:05 by oleung            #+#    #+#             */
-/*   Updated: 2023/12/07 14:04:02 by oleung           ###   ########.fr       */
+/*   Updated: 2023/12/07 14:06:10 by oleung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int ft_printf(const char *format, ...)
             p
             */
            if (format[i + 1] == 'c')
-            ft_putchar_fd(va_arg(args, int), 0);
+            ft_putchar_fd((char) va_arg(args, int), 0);
            i++; 
         }
         else
