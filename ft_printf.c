@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oleung <oleung@student.42.fr>              +#+  +:+       +#+        */
+/*   By: oleung <oleung@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 08:42:05 by oleung            #+#    #+#             */
-/*   Updated: 2023/12/08 16:13:44 by oleung           ###   ########.fr       */
+/*   Updated: 2023/12/08 22:00:27 by oleung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int ft_printf(const char *format, ...)
             else if (format[i] == 'X')
                 ft_putnbr_base_fd(va_arg(args, int), "0123456789ABCDEF", 1);
             else if (format[i] == 'p')
-                ft_putptr_fd(va_arg(args, void *), 1);
+                ft_putptr_fd(va_arg(args, unsigned long long), 1);
         }
         else
             ft_putchar_fd(format[i], 1);
