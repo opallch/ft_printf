@@ -6,45 +6,44 @@
 #    By: oleung <oleung@student.42berlin.de>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/15 22:55:22 by oleung            #+#    #+#              #
-#    Updated: 2023/12/07 23:08:24 by oleung           ###   ########.fr        #
+#    Updated: 2023/12/08 11:30:07 by oleung           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
-LIBFTNAME = libft.a
 LIBFTDIR = ./libft
+LIBFTNAME = libft.a
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-AR = ar -r
-RM = rm -f
+AR = ar r
+RM = rm -rf
 
 SRCS = 	ft_printf.c \
 		ft_putnbr_base_fd.c \
 		ft_putptr_fd.c
-		
+	
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
-makelibft:
-	make -C $(LIBFTDIR)
-	cp $(LIBFTDIR)/$(LIBFTNAME) .
-	mv $(LIBFTNAME) $(NAME)
+$(LIBFTNAME):
+	make -C $(LIBFTDIR) all
 
-$(NAME): makelibft $(OBJS)
+$(NAME): $(LIBFTNAME) $(OBJS)
+	cp $(LIBFTDIR)/$(LIBFTNAME) $(NAME)
 	$(AR) $@ $(OBJS)
 
 %.o : %.c
 	$(CC) $(CFLAGS) -o $@ -c $<
 
 clean:
+	make -C $(LIBFTDIR) clean
 	$(RM) $(OBJS)
-	cd $(LIBFTDIR) && make clean
 
 fclean: clean
+	make -C $(LIBFTDIR) fclean
 	$(RM) $(NAME)
-	cd $(LIBFTDIR) && make fclean
 
 re: clean all
 
