@@ -6,7 +6,7 @@
 #    By: oleung <oleung@student.42berlin.de>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/15 22:55:22 by oleung            #+#    #+#              #
-#    Updated: 2023/12/08 11:30:07 by oleung           ###   ########.fr        #
+#    Updated: 2023/12/08 12:11:04 by oleung           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,8 @@ SRCS = 	ft_printf.c \
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
+
+bonus: all
 
 $(LIBFTNAME):
 	make -C $(LIBFTDIR) all
