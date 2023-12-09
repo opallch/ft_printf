@@ -6,7 +6,7 @@
 /*   By: oleung <oleung@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 12:00:01 by oleung            #+#    #+#             */
-/*   Updated: 2023/12/09 13:07:48 by oleung           ###   ########.fr       */
+/*   Updated: 2023/12/09 13:16:14 by oleung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	ft_putnbr_base_fd(int n, char *base, int fd)
 	}
 }
 
-int ft_printnbr(long long n, char *base)
+int ft_printnbr(int n, char *base)
 {
     if (ft_strlen(base) == 10)
         ft_putnbr_fd(n, 1);
