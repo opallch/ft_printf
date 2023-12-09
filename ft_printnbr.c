@@ -6,13 +6,13 @@
 /*   By: oleung <oleung@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 12:00:01 by oleung            #+#    #+#             */
-/*   Updated: 2023/12/09 12:34:45 by oleung           ###   ########.fr       */
+/*   Updated: 2023/12/09 12:40:04 by oleung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int get_n_digits(int n, int base)
+static int get_n_digits(long long n, int base)
 {
     int n_digits;
     
@@ -32,7 +32,7 @@ int get_n_digits(int n, int base)
     return (n_digits);
 }
 
-int ft_printnbr(int n, char *base)
+int ft_printnbr(long long n, char *base)
 {
     if (ft_strlen(base) == 10)
         ft_putnbr_fd(n, 1);
