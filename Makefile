@@ -6,7 +6,7 @@
 #    By: oleung <oleung@student.42berlin.de>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/15 22:55:22 by oleung            #+#    #+#              #
-#    Updated: 2023/12/09 12:15:17 by oleung           ###   ########.fr        #
+#    Updated: 2023/12/09 13:09:11 by oleung           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,6 @@ AR = ar r
 RM = rm -rf
 
 SRCS = 	ft_printf.c \
-		ft_putnbr_base_fd.c \
 		ft_putptr_fd.c \
 		ft_printchar.c \
 		ft_printstr.c \
