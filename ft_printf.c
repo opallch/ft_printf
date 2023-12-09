@@ -6,7 +6,7 @@
 /*   By: oleung <oleung@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 08:42:05 by oleung            #+#    #+#             */
-/*   Updated: 2023/12/08 22:00:27 by oleung           ###   ########.fr       */
+/*   Updated: 2023/12/09 11:40:05 by oleung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,18 @@ int ft_printf(const char *format, ...)
 {
     size_t  i;
     va_list args;
+    int n_char;
     
     i = 0;
     va_start(args, format);
+    n_char = 0;    
     while (format[i])
     {
         if (format[i] == '%') // TODO why seg fault when format[i++]
         {
            i++; 
            if (format[i] == 'c')
-            ft_putchar_fd((char) va_arg(args, int), 1);
+            n_char += ft_printchar((char) va_arg(args, int));
            else if (format[i] == 's')
             ft_putstr_fd(va_arg(args, char *), 1);
             else if (format[i] == '%')
@@ -39,12 +41,15 @@ int ft_printf(const char *format, ...)
             else if (format[i] == 'X')
                 ft_putnbr_base_fd(va_arg(args, int), "0123456789ABCDEF", 1);
             else if (format[i] == 'p')
-                ft_putptr_fd(va_arg(args, unsigned long long), 1);
+                ft_putptr_fd(va_arg(args, long long unsigned int), 1);
         }
         else
+        {
             ft_putchar_fd(format[i], 1);
+            n_char++;
+        }
         i++;
     }
     va_end(args);
-    return (0);
+    return (n_char);
 }
