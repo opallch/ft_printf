@@ -6,7 +6,7 @@
 #    By: oleung <oleung@student.42berlin.de>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/15 22:55:22 by oleung            #+#    #+#              #
-#    Updated: 2023/12/10 10:42:26 by oleung           ###   ########.fr        #
+#    Updated: 2023/12/10 11:01:04 by oleung           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,11 +51,10 @@ fclean: clean
 re: clean all
 
 norm: $(SRCS)
-	norminette ft_*.c
-	norminette ft_*.h
+	norminette ft_*.c $(LIBFTDIR)/*.c ft_*.h $(LIBFTDIR)/*.h
 
 format: $(SRCS)
-	python3 -m c_formatter_42 ft_*.c
-	python3 -m c_formatter_42 ft_*.h
+	python3 -m c_formatter_42 ft_*.c ft_*.h
+	make norm
 
 .PHONY: bonus all clean fclean re norm format

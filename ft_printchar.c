@@ -6,14 +6,14 @@
 /*   By: oleung <oleung@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 11:30:37 by oleung            #+#    #+#             */
-/*   Updated: 2023/12/09 11:39:32 by oleung           ###   ########.fr       */
+/*   Updated: 2023/12/10 10:52:59 by oleung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_printchar(char c)
+int	ft_printchar(char c)
 {
-    ft_putchar_fd(c, 1);
-    return (1);
+	ft_putchar_fd(c, 1);
+	return (1);
 }
