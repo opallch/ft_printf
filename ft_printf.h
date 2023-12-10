@@ -6,7 +6,7 @@
 /*   By: oleung <oleung@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 09:07:52 by oleung            #+#    #+#             */
-/*   Updated: 2023/12/10 09:44:40 by oleung           ###   ########.fr       */
+/*   Updated: 2023/12/10 09:58:16 by oleung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@ int ft_printchar(char c);
 int ft_printstr(char *str);
 int ft_printnbr(int n, char *base);
 int ft_printptr(long long unsigned int ptr);
+int ft_printnbr_unsigned(unsigned int n, char *base);
 
 # endif

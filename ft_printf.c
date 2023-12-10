@@ -6,7 +6,7 @@
 /*   By: oleung <oleung@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 08:42:05 by oleung            #+#    #+#             */
-/*   Updated: 2023/12/10 09:08:16 by oleung           ###   ########.fr       */
+/*   Updated: 2023/12/10 09:57:31 by oleung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,11 @@ int ft_printf(const char *format, ...)
             else if (format[i] == 'd' || format[i] == 'i')
                 n_char += ft_printnbr(va_arg(args, int), "0123456789");
             else if (format[i] == 'u')
-                n_char += ft_printnbr(va_arg(args, unsigned int), "0123456789");
+                n_char += ft_printnbr_unsigned(va_arg(args, unsigned int), "0123456789");
             else if (format[i] == 'x')
-                n_char += ft_printnbr(va_arg(args, int), "0123456789abcdef");
+                n_char += ft_printnbr_unsigned(va_arg(args, unsigned int), "0123456789abcdef");
             else if (format[i] == 'X')
-                n_char += ft_printnbr(va_arg(args, int), "0123456789ABCDEF");
+                n_char += ft_printnbr_unsigned(va_arg(args, unsigned int), "0123456789ABCDEF");
             else if (format[i] == 'p')
                 n_char += ft_printptr(va_arg(args, long long unsigned int));
         }
