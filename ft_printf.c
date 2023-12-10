@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oleung <oleung@student.42berlin.de>        +#+  +:+       +#+        */
+/*   By: oleung <oleung@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 08:42:05 by oleung            #+#    #+#             */
-/*   Updated: 2023/12/10 10:57:41 by oleung           ###   ########.fr       */
+/*   Updated: 2023/12/10 19:45:44 by oleung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ int	ft_printf(const char *format, ...)
 	size_t	i;
 	int		n_char;
 
+	if (!format)
+		return (-1);
 	i = 0;
 	va_start(args, format);
 	n_char = 0;
