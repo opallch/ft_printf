@@ -6,7 +6,7 @@
 /*   By: oleung <oleung@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 15:55:05 by oleung            #+#    #+#             */
-/*   Updated: 2023/12/10 09:56:38 by oleung           ###   ########.fr       */
+/*   Updated: 2023/12/10 10:03:51 by oleung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ static int get_n_digits_unsigned(unsigned int n, int base)
     int n_digits;
     
     n_digits = 0;
+    if (n == 0)
+        n_digits++;
     while(n > 0)
     {
         n_digits++;
