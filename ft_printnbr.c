@@ -6,7 +6,7 @@
 /*   By: oleung <oleung@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 12:00:01 by oleung            #+#    #+#             */
-/*   Updated: 2023/12/09 13:16:14 by oleung           ###   ########.fr       */
+/*   Updated: 2023/12/10 09:04:37 by oleung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,3 +66,4 @@ int ft_printnbr(int n, char *base)
         ft_putnbr_base_fd(n, base, 1);
     return (get_n_digits(n, ft_strlen(base)));
 }
+
