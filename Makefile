@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: oleung <oleung@student.42berlin.de>        +#+  +:+       +#+         #
+#    By: oleung <oleung@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/15 22:55:22 by oleung            #+#    #+#              #
-#    Updated: 2023/12/10 11:01:04 by oleung           ###   ########.fr        #
+#    Updated: 2023/12/10 15:07:28 by oleung           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ LIBFTNAME = libft.a
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-AR = ar r
+AR = ar -rcs
 RM = rm -rf
 
 SRCS = 	ft_printf.c \
